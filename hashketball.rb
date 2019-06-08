@@ -210,17 +210,20 @@ end
 
 
 def player_stats(player_name)
+  player_data = {}
   game_hash.each do |team_location, team_hash|
     team_hash.each do |team_attribute, team_attribute_value|
       if team_attribute == :players
         team_attribute_value.each do |player_hash|
           if player_hash[:name] == player_name
-            return player_hash
+            player_data =  player_hash
           end
         end
       end
     end
   end
+  player_data.delete_if {|attribute, attribute_value| attribute == :name}
+  return player_data
 end
 
   

@@ -228,12 +228,22 @@ end
 
   
 def big_shoe_rebounds
-  biggest_shoe = nil 
+  biggest_shoe = 0 
   player_with_biggest_shoe = ""
   game_hash.each do |team_location, team_hash|
     team_hash.each do |team_attribute, team_attribute_value|
+      if team_attribute == :players
+        team_attribute_value.each do |player_hash|
+          player_hash.each do |player_attribute, player_attribute_value|
+            if player_attribute == :shoe 
+              if player_attribute_value > biggest_shoe
+                biggest_shoe == player_attribute_value
+                player_with_biggest_shoe == player_hash[:name]
+              end
+            end
+          end
+        end
+      end
+    end
+  end
 end
-  
-  
-  
-  

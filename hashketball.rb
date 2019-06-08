@@ -239,7 +239,6 @@ def big_shoe_rebounds
               if player_attribute_value > biggest_shoe
                 biggest_shoe = player_attribute_value
                 player_rebounds = player_hash[:rebounds]
-                
               end
             end
           end
@@ -249,3 +248,19 @@ def big_shoe_rebounds
   end
   player_rebounds
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
